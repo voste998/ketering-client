@@ -1,0 +1,43 @@
+.nav-active{
+    border-bottom: 2px solid wheat;
+    color: wheat !important;
+}
+.nav-link-style{
+    text-decoration: none;
+    color: #808080; 
+}
+.logo-holder  img{
+    width: 100px;
+}
+
+.menu-options ul {
+    margin-top: 10px;
+}
+
+@media (min-width: 768px){
+    .menu-btn{
+        display: none;
+    }
+    .menu-options{
+        display: block !important;
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .logo-holder  img{
+        width: 150px;
+    }
+    .logo-holder{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .menu-options ul {
+        border-top: none;
+        margin-top: 0px;
+    }
+    .menu-options  a {
+        margin-right: 10px ;
+    }
+}
+

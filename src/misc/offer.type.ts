@@ -1,0 +1,1 @@
+export type OfferType="constant"|"exchangeable"|"none";

@@ -68,7 +68,7 @@ async function refreshAndRepeat(config:AxiosRequestConfig<string>,
             baseURL:"http://localhost:3000/",
             method:"post",
             data:JSON.stringify({
-                token:getRefreshToken(role)
+                refreshToken:getRefreshToken(role)
             }),
 
             headers:{
@@ -76,7 +76,7 @@ async function refreshAndRepeat(config:AxiosRequestConfig<string>,
             }
         };
         await axios(refreshConfig).then(async res=>{
-            
+
             if(res.data.statusCode || !res.data.token){
                 resolve({
                     status:"login",

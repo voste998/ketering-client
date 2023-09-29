@@ -1,0 +1,77 @@
+.meal-card-holder{
+    background: #212529;
+    border-radius: 10px;
+    border:1px solid #808080;
+}
+.meal-card-name{
+    color: #e6e6ee;
+    margin-bottom: 0px;
+}
+.meal-card-description{
+    color: #808080;
+    margin-bottom: 0px;
+    border-bottom: 1px dashed #808080;
+}
+.meal-card-description svg {
+    color: wheat;
+}
+.meal-card-details{
+   color: #bebec1;
+   display: flex;
+   flex-direction: row;
+   font-family: alice;
+   position: relative;
+}
+.add-meal-error{
+    opacity: 0;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    top:0px;
+    color:tomato !important;
+    margin-bottom: 0px;
+    background: #212529;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+    animation: show-error 4s;
+}
+@keyframes show-error{
+    0%{
+        opacity: 1;
+    }
+    90%{
+      opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+
+}
+.meal-card-details > div{
+    flex-grow: 1;
+    text-align: center;
+}
+.card-meal-footer{
+    border-top: 1px solid #808080;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.card-meal-footer > div{
+    border-radius: 10px;
+    border:1px solid tomato;
+    color:tomato;
+}
+
+.card-meal-footer > div:focus  {
+    background: #303030;
+    color: #bebec1;
+    border: 1px solid #bebec1;
+}
+.card-meal-footer > div:hover  {
+    background: #303030;
+    color: #808080;
+    border: 1px solid #808080;
+}
