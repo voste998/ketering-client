@@ -1,7 +1,7 @@
 import { Col, Row ,Form, Button } from "react-bootstrap";
 import "./Login.css";
 import photo from "./kuvar.png";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import api, { setRefreshToken } from "../../api/api";
 import { RoleContext } from "../app/App";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +17,16 @@ export function Login(){
     const [loginInfo,setLoginInfo]=useState<string|undefined>(undefined);
     const navigate=useNavigate();
     const setRole=useContext(RoleContext);
+
+    useEffect(()=>{
+        api("auth/workman/tokenCheck","get","workman",undefined).then(res=>{
+            console.log(res.data)
+            if(res.data?.status==="ok" && res.data?.statusCode===1000){
+                setRole("workman");
+                navigate("/workman/offer");
+            }
+        })
+    },[])
 
     return (
         <>

@@ -3,25 +3,29 @@
     width: 100%;
     justify-content: space-between;
     background: #212529;
-    border-bottom:1px solid #808080;
+    border-bottom: 1px solid #b9b9b9;
+    
 }
 #day-menu > div {
     text-align: center;
-    color: #808080;
     flex-grow: 1;
 }
 .non-active{
     display:none;
+    color: #808080;
 }
 .is-active{
-    color:#e6e6e6 !important;  
+    color:#de5e97; 
+    font-family: cursive;
 }
 .change-day{
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 120%;
+    color:#808080;
 }
+
 .offer-nav{
     border-radius: 15px;
     width:20%;
@@ -33,6 +37,9 @@
 }
 #offer-menu{
     display: flex;    
+}
+#offer-menu > div{
+    margin:10px
 }
 .offer-option{
     border-radius: 15px;
@@ -50,24 +57,23 @@
     color: #e6e6e6;
     padding-right: 10px;
     padding-left: 10px;
-    margin-left: 10px;
 }
 .option-info{
     display: none;
 }
-.cart-nav :hover{
+.cart-nav:hover{
     color: #808080;
     border:2px solid #808080;
 }
 .cart-nav svg{
     border: none !important;
 }
-.cart-nav > div{
-    height: 200px;
-    width: 200px;
-    border:1px solid #e6e6e6;
-    font-size: 80px;
-    color: #e6e6e6;
+.cart-nav{
+    aspect-ratio: 1/1;
+    width: 40%;
+    border:1px solid #d0d0d0;
+    font-size: 5vw;
+    color: #d0d0d0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -119,12 +125,17 @@
 @media (min-width: 768px){
     .non-active{
         display: block;
+        border-bottom: 1px solid #d0d0d0;
     }
     .is-active{
-        border-bottom: 2px solid #e6e6e6;
+        border-bottom: 3px solid #d0d0d0;
+        color:#d0d0d0 ;
     }
     .change-day{
         display:none;
+    }
+    #day-menu{
+        border-bottom: none !important;
     }
     
 }
@@ -133,5 +144,20 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+}
+@media (max-width:400px){
+    
+    .offer-nav{
+        display: none;
+    }
+    
+    #offer-menu{
+        justify-content: space-around;
+    }
+    #offer-menu > div{
+        margin:0px;
+        font-size: 95%;
+        width: 30%;
     }
 }

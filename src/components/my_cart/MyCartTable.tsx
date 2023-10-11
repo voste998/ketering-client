@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Cart } from "./MyCart";
 import "./MyCart.css";
-import { faBurger, faCalendarDay, faKey } from "@fortawesome/free-solid-svg-icons";
+import { faBurger, faCalendarDay, faKey, faRecycle, faXmark, faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
 import { days } from "../../misc/day.type";
+import api from "../../api/api";
 
 export interface MyCartTableProps{
     cart:Cart;
@@ -10,14 +11,13 @@ export interface MyCartTableProps{
 export function MyCartTable(props:MyCartTableProps){
 
     return (
-        <><div className="mt-3">
-        <div className="p-2">
             <table className="table table-striped table-dark">
                 <thead>
                     <tr>
                         <th><FontAwesomeIcon icon={faCalendarDay}/> Dan</th>
                         <th><FontAwesomeIcon icon={faKey}/></th>
                         <th><FontAwesomeIcon icon={faBurger}/> Jelo</th>
+                        {props.cart.status==="next" && <th className="text-center"><FontAwesomeIcon icon={faRecycle}/> Izbaci</th>}
                     </tr>
                 </thead>
                 <tbody>
@@ -26,9 +26,6 @@ export function MyCartTable(props:MyCartTableProps){
                     }
                 </tbody>
             </table>
-        </div> 
-    </div>
-    </>
     );
     function configureTableRows(cart:Cart){
         const tableRows=new Array(7);
@@ -41,11 +38,24 @@ export function MyCartTable(props:MyCartTableProps){
                 <td>{days[toNumb]}</td>
                 <td>{mealCart.meal.mealId}</td>
                 <td>{mealCart.meal.name}</td>
+                {
+                cart.status==="next" && <td className="text-center">
+                                                <FontAwesomeIcon className="delete-my-meal" id={mealCart.mealCartId+""} 
+                                                        icon={faXmarkCircle} onClick={e=>deleteMeal(e)}/>
+                                        </td>
+                }
             </tr>;
 
         });
         return tableRows.filter(el=>{
             return el!==undefined;
+        })
+    }
+    function deleteMeal(e:React.MouseEvent<SVGSVGElement>){
+        const mealCartId=e.currentTarget.id;
+
+        api("api/cart/deleteCartMeal/"+mealCartId,"delete","workman",undefined).then(res=>{
+            console.log(res);
         })
     }
 }

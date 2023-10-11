@@ -47,7 +47,7 @@ export function Offer(){
     return(
         <>
         <Row>
-            <Col lg={{span:6,offset:1}}>
+            <Col lg={{span:6,offset:1}} >
                 <div id="day-menu">
                     <div id="backward" className="change-day" onClick={e=>selectDay(e)}><FontAwesomeIcon icon={faArrowCircleLeft}/></div>
                     {
@@ -60,15 +60,15 @@ export function Offer(){
                     <div id="forward" className="change-day" onClick={e=>selectDay(e)}><FontAwesomeIcon icon={faArrowCircleRight}/></div>
                 </div>
                 <div id="offer-menu" className="pt-2">
-                    <div className="offer-nav m-2"><FontAwesomeIcon icon={faSquareCheck}/> Ponuda:</div>
+                    <div className="offer-nav"><FontAwesomeIcon icon={faSquareCheck}/> Ponuda:</div>
                     <div className={getOfferClass(offer,"none")} onClick={()=>setOffer("none")}>Sve</div>
                     <div className={getOfferClass(offer,"constant")} onClick={()=>setOffer("constant")}>Stalna</div>
                     <div className={getOfferClass(offer,"exchangeable")} onClick={()=>setOffer("exchangeable")}>Izmjenjiva</div>
                 </div>
-                <div className="row mt-2">
+                <div className="row ">
                     {
                         meals.map(meal=>{
-                            return <Col lg={{span:6}} md={{span:6}} className="p-2">
+                            return <Col lg={{span:6}} md={{span:6}} className="pl-2 pr-2">
                                 <MealCard data={meal}></MealCard>
                             </Col>
                         })
@@ -76,10 +76,8 @@ export function Offer(){
                 </div>
             </Col>
             <Col className="option-info" lg={{span:4}}>
-                <div className="cart-nav mt-4">
-                    <div>
+                <div className="cart-nav mt-4" onClick={()=>navigate("/workman/cart")}>
                         <FontAwesomeIcon icon={faCartShopping}/>
-                    </div>
                 </div>
                 <div className="offer-workman-info mt-4">
                     <div className="p-3"><FontAwesomeIcon icon={faInfoCircle}/> Informacije o radniku</div>
@@ -113,7 +111,7 @@ export function Offer(){
         return day===currentDay?"is-active pb-2 pt-2":"non-active pb-2 pt-2";
     }
     function getOfferClass(offer:OfferType,currenOffer:OfferType){
-        return offer===currenOffer?"offer-option-active m-2":"offer-option m-2";
+        return offer===currenOffer?"offer-option-active":"offer-option";
     }
     function mealResultsHandler(res:ApiResponse){
         if(res.status==="login"){

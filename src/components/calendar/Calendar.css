@@ -1,0 +1,39 @@
+
+.calendar{
+    width: 80%;
+}
+.calendar > p{
+    color: #de5e97;
+}
+.cal-days{
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+}
+.cal-days > div{
+    flex-grow: 1;
+    text-align: center;
+}
+.focus-date{
+    background: #de5e97;
+    color: white;
+    border-radius: 50%;
+}
+.cal-dates{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+.cal-dates > div{
+    color:aliceblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+
+
+    
+

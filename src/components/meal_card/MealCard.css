@@ -2,25 +2,48 @@
     background: #212529;
     border-radius: 10px;
     border:1px solid #808080;
+    position: relative;
 }
 .meal-card-name{
     color: #e6e6ee;
     margin-bottom: 0px;
+    padding: 15px;
 }
 .meal-card-description{
     color: #808080;
     margin-bottom: 0px;
     border-bottom: 1px dashed #808080;
+    font-size: 95%;
 }
 .meal-card-description svg {
     color: wheat;
+}
+.description-expand{
+    text-align: center;
+    display: none;
+    color:white;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top:0px;
+    bottom: 0px;
+    margin-bottom: 0px;
+    background: #212529;
+    opacity: 0.9;
+    border-radius: 10px;
+    z-index: 1;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 10px;
 }
 .meal-card-details{
    color: #bebec1;
    display: flex;
    flex-direction: row;
-   font-family: alice;
+   font-family: cursive;
+   font-size: 90% ;
    position: relative;
+   padding: 10px;
 }
 .add-meal-error{
     opacity: 0;
@@ -74,4 +97,22 @@
     background: #303030;
     color: #808080;
     border: 1px solid #808080;
+}
+
+@media (max-width:400px){
+    .meal-card-name{
+        padding: 7.5px;
+    }
+    .meal-card-description{
+        font-size: 90%;
+    }
+    .meal-card-details{
+        font-size: 85%;
+        padding: 5px;
+        font-family: cursive;
+    }
+    .card-meal-footer > div{
+        font-family: cursive !important;
+        font-size: 90%;
+    }
 }

@@ -32,7 +32,7 @@ export function Info(){
 
     return(<>
     <Row>
-        <Col lg={{span:6,offset:3}} md={{span:8,offset:2}} sm={{span:8,offset:2}} xs={{span:10,offset:1}} className="info-holder">
+        <Col lg={{span:6,offset:3}} md={{span:8,offset:2}} sm={{span:8,offset:2}} className="info-holder">
             <div className="mt-4">
                 <div className="p-3"><FontAwesomeIcon icon={faInfoCircle}/> Informacije o kompaniji</div>
                 <div>
@@ -52,7 +52,7 @@ export function Info(){
                     {
                         Object.keys(days).map(day=>{
                             let toNumb:0|1|2|3|4|5|6=Number(day) as any;
-                            return <><FontAwesomeIcon color={companyDays[toNumb]?"#32CD32":"tomato"} icon={companyDays[toNumb]?faCheck:faXmark}/> {days[toNumb]}<br/></>
+                            return <p><FontAwesomeIcon color={companyDays[toNumb]?"#d0d0d0":"#dc0101"} icon={companyDays[toNumb]?faCheck:faXmark}/> {days[toNumb]}</p>
                         })
                     } 
                 </div>
