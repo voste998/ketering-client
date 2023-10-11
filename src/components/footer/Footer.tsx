@@ -18,7 +18,7 @@ export function Footer(){
             <div className="foot-info-box">
                 <h5>Altera Ketering</h5>
                 <p>
-                    .
+                    
                 </p>
             </div>
             <div className="foot-info-box">
